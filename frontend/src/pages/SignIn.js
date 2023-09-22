@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { auth } from '../firebaseconfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate(); // Correctly initialize the useNavigate hook.
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  
+
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -18,9 +21,9 @@ const SignIn = () => {
   const handleSignIn = async () => {
     try {
       setError(null); // Clear any previous errors
-      await signInWithEmailAndPassword(auth,email, password);
-      console.log("successfull");
-      // The user is signed in, you can redirect or update your UI accordingly.
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("Successfully signed in");
+      navigate("/"); // Use the navigate function to redirect upon successful login
     } catch (error) {
       setError(error.message); // Set the error message
     }
@@ -48,11 +51,11 @@ const SignIn = () => {
           Login
         </button>
         {error && <p className="text-red-500 text-center mt-3">{error}</p>}
-        <a to="/signup">
+        <Link to="/signup"> {/* Use the Link component for navigation */}
           <h1 className="text-sm font-light text-[#191717] my-2 text-center cursor-pointer">
             Don't have an account? Sign Up!
           </h1>
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 const SignUp = () => {
   return (
     <div className="w-screen h-screen flex justify-center items-center montserrat bg-black">
-      <div className="w-[400px] h-[300px] bg-[#333333] rounded-lg p-5">
-        <h1 className="text-center font-bold text-3xl text-white">Sign Up</h1>
+      <div className="w-[400px] h-[300px] bg-[#F1EFEF] rounded-lg p-5">
+        <h1 className="text-center font-bold text-3xl text-[#191717]">
+          Sign Up
+        </h1>
         <input
           type="text"
           placeholder="Username"
@@ -17,7 +19,7 @@ const SignUp = () => {
           Sign Up
         </button>
         <a to="/login">
-          <h1 className="text-sm font-light text-white my-2 text-center cursor-pointer">
+          <h1 className="text-sm font-light text-[#191717] my-2 text-center cursor-pointer">
             Already have an account? Login!
           </h1>
         </a>

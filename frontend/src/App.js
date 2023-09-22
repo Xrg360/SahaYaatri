@@ -8,7 +8,7 @@ import DriverDashboard from "./pages/DriverDash";
 function App() {
   return (
     <div className="App">
-      <SignUp />
+      <SignIn />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const driverController = require("../controllers/driverController");
+const driverController = require(",../controllers/drivercontroller");
 
 // Route to get a list of available drivers
 router.get("/available", driverController.getAvailableDrivers);

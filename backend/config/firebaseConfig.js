@@ -3,13 +3,13 @@ import 'firebase/auth';
 import 'firebase/firestore'; // Include this if you're using Firestore
 
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_AUTH_DOMAIN',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_STORAGE_BUCKET',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
-};
+    apiKey: "AIzaSyBXlGO6KnM9aDiZeNGy-sfKrWVCHAy8IaI",
+    authDomain: "sahayaatra-80c63.firebaseapp.com",
+    projectId: "sahayaatra-80c63",
+    storageBucket: "sahayaatra-80c63.appspot.com",
+    messagingSenderId: "718999864506",
+    appId: "1:718999864506:web:cdb806f3bd5e82dc90ee83"
+  };
 
 // Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);

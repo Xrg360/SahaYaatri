@@ -1,80 +1,29 @@
-import React, { useState } from 'react';
 
-function SignIn() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleSignIn = (e) => {
-    e.preventDefault();
-
-    // Replace this with your authentication logic.
-    if (username === 'yourusername' && password === 'yourpassword') {
-      // Successful sign-in
-      setError('');
-      alert('Sign-in successful!');
-    } else {
-      // Display an error message
-      setError('Invalid username or password');
-    }
-  };
-
+const SignIn = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
-        </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSignIn}>
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="username" className="sr-only">
-                Username
-              </label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                autoComplete="username"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-
-          <div>
-            <button
-              type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Sign in
-            </button>
-          </div>
-        </form>
+    <div className="w-screen h-screen flex justify-center items-center bg-black">
+      <div className="w-[400px] h-[300px] bg-[#333333] rounded-lg p-5 montserrat">
+        <h1 className="text-center font-bold text-3xl text-white">Login</h1>
+        <input
+          type="text"
+          placeholder="Username"
+          className="h-12 w-full mt-5 p-3 rounded-md"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="h-12 w-full mt-5 p-3 rounded-md"
+        />
+        <button className="h-12 w-full mt-5 bg-[#1e1d1d] transition-all ease-in-out duration-300 hover:bg-[#000000] text-white rounded-md">
+          Login
+        </button>
+        <a to="/signup">
+          <h1 className="text-sm font-light text-white my-2 text-center cursor-pointer">
+            Don't have an account? Sign Up!
+          </h1>
+        </a>
       </div>
     </div>
   );
-}
-
+};
 export default SignIn;
